@@ -46,7 +46,7 @@
         <tspan x="535" y="200"> return false;</tspan>
         <tspan x="515" y="225"> }</tspan>
         <tspan x="495" y="250"></tspan>
-        <tspan x="515" y="275"> if (user.age <= 21) {</tspan>
+        <tspan x="515" y="275"> if (user.age &lt;= 21) {</tspan>
         <tspan x="535" y="300"> return false;</tspan>
         <tspan x="515" y="325"> }</tspan>
         <tspan x="495" y="350"></tspan>
@@ -58,22 +58,28 @@
         <tspan x="495" y="500">}</tspan>
     </text>
 
-    <!-- Animation for Nested If (Better aligned with text) -->
+    <!-- Animation for Nested If (Extended to all returns) -->
     <rect id="nestedHighlight" x="85" y="138" width="320" height="18" fill="#ffec3d"
         fill-opacity="0.5" opacity="0">
-        <animate id="nestAnim1" attributeName="opacity" from="0" to="1" begin="0s;nestAnim7.end+1s"
+        <animate id="nestAnim1" attributeName="opacity" from="0" to="1" begin="0s;nestAnim15.end+1s"
             dur="0.5s" fill="freeze" />
         <animate id="nestAnim2" attributeName="y" from="138" to="163" begin="nestAnim1.end"
             dur="0.5s" fill="freeze" />
-        <animate id="nestAnim3" attributeName="y" from="163" to="188" begin="nestAnim2.end+0.5s"
+        <animate id="nestAnim3" attributeName="y" from="163" to="188" begin="nestAnim2.end+0.3s"
             dur="0.5s" fill="freeze" />
-        <animate id="nestAnim4" attributeName="y" from="188" to="213" begin="nestAnim3.end+0.5s"
+        <animate id="nestAnim4" attributeName="y" from="188" to="213" begin="nestAnim3.end+0.3s"
             dur="0.5s" fill="freeze" />
-        <animate id="nestAnim5" attributeName="y" from="213" to="238" begin="nestAnim4.end+0.5s"
+        <animate id="nestAnim5" attributeName="y" from="213" to="238" begin="nestAnim4.end+0.3s"
             dur="0.5s" fill="freeze" />
-        <animate id="nestAnim6" attributeName="opacity" from="1" to="0" begin="nestAnim5.end+1s"
+        <animate id="nestAnim6" attributeName="y" from="238" to="288" begin="nestAnim5.end+0.5s"
             dur="0.5s" fill="freeze" />
-        <animate id="nestAnim7" attributeName="y" from="238" to="138" begin="nestAnim6.end"
+        <animate id="nestAnim7" attributeName="y" from="288" to="363" begin="nestAnim6.end+0.5s"
+            dur="0.5s" fill="freeze" />
+        <animate id="nestAnim8" attributeName="y" from="363" to="438" begin="nestAnim7.end+0.5s"
+            dur="0.5s" fill="freeze" />
+        <animate id="nestAnim9" attributeName="opacity" from="1" to="0" begin="nestAnim8.end+0.8s"
+            dur="0.5s" fill="freeze" />
+        <animate id="nestAnim15" attributeName="y" from="438" to="138" begin="nestAnim9.end"
             dur="0.01s" fill="freeze" />
     </rect>
 
@@ -86,17 +92,17 @@
             dur="0.5s" fill="freeze" />
         <animate id="earlyAnim3" attributeName="y" from="163" to="188" begin="earlyAnim2.end+0.2s"
             dur="0.5s" fill="freeze" />
-        <animate id="earlyAnim4" attributeName="y" from="188" to="263" begin="earlyAnim3.end+1s"
+        <animate id="earlyAnim4" attributeName="y" from="188" to="263" begin="earlyAnim3.end+0.5s"
             dur="0.5s" fill="freeze" />
         <animate id="earlyAnim5" attributeName="y" from="263" to="288" begin="earlyAnim4.end+0.2s"
             dur="0.5s" fill="freeze" />
-        <animate id="earlyAnim6" attributeName="y" from="288" to="363" begin="earlyAnim5.end+1s"
+        <animate id="earlyAnim6" attributeName="y" from="288" to="363" begin="earlyAnim5.end+0.5s"
             dur="0.5s" fill="freeze" />
         <animate id="earlyAnim7" attributeName="y" from="363" to="388" begin="earlyAnim6.end+0.2s"
             dur="0.5s" fill="freeze" />
-        <animate id="earlyAnim8" attributeName="y" from="388" to="463" begin="earlyAnim7.end+1s"
+        <animate id="earlyAnim8" attributeName="y" from="388" to="463" begin="earlyAnim7.end+0.5s"
             dur="0.5s" fill="freeze" />
-        <animate id="earlyAnim9" attributeName="opacity" from="1" to="0" begin="earlyAnim8.end+1s"
+        <animate id="earlyAnim9" attributeName="opacity" from="1" to="0" begin="earlyAnim8.end+0.8s"
             dur="0.5s" fill="freeze" />
         <animate id="earlyAnim10" attributeName="y" from="463" to="138" begin="earlyAnim9.end"
             dur="0.01s" fill="freeze" />
