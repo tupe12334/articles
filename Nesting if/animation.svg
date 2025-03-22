@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+    <!-- Background -->
+    <rect width="900" height="650" fill="#f8f9fa" />
+
+    <!-- Title -->
+    <text x="450" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold"
+        text-anchor="middle" fill="#333">Nested If vs. Early Returns</text>
+
+    <!-- Left Side - Nested If (Wider) -->
+    <rect x="50" y="70" width="390" height="500" rx="10" fill="#e6f7ff" stroke="#1890ff"
+        stroke-width="2" />
+    <text x="245" y="100" font-family="Arial, sans-serif" font-size="18" font-weight="bold"
+        text-anchor="middle" fill="#1890ff">Nested If</text>
+
+    <!-- Right Side - Early Returns (Wider) -->
+    <rect x="460" y="70" width="390" height="500" rx="10" fill="#f6ffed" stroke="#52c41a"
+        stroke-width="2" />
+    <text x="655" y="100" font-family="Arial, sans-serif" font-size="18" font-weight="bold"
+        text-anchor="middle" fill="#52c41a">Early Returns</text>
+
+    <!-- Nested If Code (Wider box) -->
+    <rect x="70" y="120" width="350" height="420" rx="5" fill="#fff" stroke="#ddd" stroke-width="1" />
+    <text font-family="Consolas, monospace" font-size="14" fill="#333">
+        <tspan x="85" y="150">function checkAccess(user) {</tspan>
+        <tspan x="105" y="175"> if (user.isUser) {</tspan>
+        <tspan x="125" y="200"> if (user.age > 21) {</tspan>
+        <tspan x="145" y="225"> if (user.country === 'Israel') {</tspan>
+        <tspan x="165" y="250"> return true;</tspan>
+        <tspan x="145" y="275"> } else {</tspan>
+        <tspan x="165" y="300"> return false;</tspan>
+        <tspan x="145" y="325"> }</tspan>
+        <tspan x="125" y="350"> } else {</tspan>
+        <tspan x="145" y="375"> return false;</tspan>
+        <tspan x="125" y="400"> }</tspan>
+        <tspan x="105" y="425"> } else {</tspan>
+        <tspan x="125" y="450"> return false;</tspan>
+        <tspan x="105" y="475"> }</tspan>
+        <tspan x="85" y="500">}</tspan>
+    </text>
+
+    <!-- Early Returns Code (Wider box) -->
+    <rect x="480" y="120" width="350" height="420" rx="5" fill="#fff" stroke="#ddd" stroke-width="1" />
+    <text font-family="Consolas, monospace" font-size="14" fill="#333">
+        <tspan x="495" y="150">function checkAccess(user) {</tspan>
+        <tspan x="515" y="175"> if (!user.isUser) {</tspan>
+        <tspan x="535" y="200"> return false;</tspan>
+        <tspan x="515" y="225"> }</tspan>
+        <tspan x="495" y="250"></tspan>
+        <tspan x="515" y="275"> if (user.age <= 21) {</tspan>
+        <tspan x="535" y="300"> return false;</tspan>
+        <tspan x="515" y="325"> }</tspan>
+        <tspan x="495" y="350"></tspan>
+        <tspan x="515" y="375"> if (user.country !== 'Israel') {</tspan>
+        <tspan x="535" y="400"> return false;</tspan>
+        <tspan x="515" y="425"> }</tspan>
+        <tspan x="495" y="450"></tspan>
+        <tspan x="515" y="475"> return true;</tspan>
+        <tspan x="495" y="500">}</tspan>
+    </text>
+
+    <!-- Animation for Nested If (Better aligned with text) -->
+    <rect id="nestedHighlight" x="85" y="138" width="320" height="18" fill="#ffec3d"
+        fill-opacity="0.5" opacity="0">
+        <animate id="nestAnim1" attributeName="opacity" from="0" to="1" begin="0s;nestAnim7.end+1s"
+            dur="0.5s" fill="freeze" />
+        <animate id="nestAnim2" attributeName="y" from="138" to="163" begin="nestAnim1.end"
+            dur="0.5s" fill="freeze" />
+        <animate id="nestAnim3" attributeName="y" from="163" to="188" begin="nestAnim2.end+0.5s"
+            dur="0.5s" fill="freeze" />
+        <animate id="nestAnim4" attributeName="y" from="188" to="213" begin="nestAnim3.end+0.5s"
+            dur="0.5s" fill="freeze" />
+        <animate id="nestAnim5" attributeName="y" from="213" to="238" begin="nestAnim4.end+0.5s"
+            dur="0.5s" fill="freeze" />
+        <animate id="nestAnim6" attributeName="opacity" from="1" to="0" begin="nestAnim5.end+1s"
+            dur="0.5s" fill="freeze" />
+        <animate id="nestAnim7" attributeName="y" from="238" to="138" begin="nestAnim6.end"
+            dur="0.01s" fill="freeze" />
+    </rect>
+
+    <!-- Animation for Early Return (Better aligned with text) -->
+    <rect id="earlyHighlight" x="495" y="138" width="320" height="18" fill="#52c41a"
+        fill-opacity="0.5" opacity="0">
+        <animate id="earlyAnim1" attributeName="opacity" from="0" to="1"
+            begin="0s;earlyAnim10.end+1s" dur="0.5s" fill="freeze" />
+        <animate id="earlyAnim2" attributeName="y" from="138" to="163" begin="earlyAnim1.end"
+            dur="0.5s" fill="freeze" />
+        <animate id="earlyAnim3" attributeName="y" from="163" to="188" begin="earlyAnim2.end+0.2s"
+            dur="0.5s" fill="freeze" />
+        <animate id="earlyAnim4" attributeName="y" from="188" to="263" begin="earlyAnim3.end+1s"
+            dur="0.5s" fill="freeze" />
+        <animate id="earlyAnim5" attributeName="y" from="263" to="288" begin="earlyAnim4.end+0.2s"
+            dur="0.5s" fill="freeze" />
+        <animate id="earlyAnim6" attributeName="y" from="288" to="363" begin="earlyAnim5.end+1s"
+            dur="0.5s" fill="freeze" />
+        <animate id="earlyAnim7" attributeName="y" from="363" to="388" begin="earlyAnim6.end+0.2s"
+            dur="0.5s" fill="freeze" />
+        <animate id="earlyAnim8" attributeName="y" from="388" to="463" begin="earlyAnim7.end+1s"
+            dur="0.5s" fill="freeze" />
+        <animate id="earlyAnim9" attributeName="opacity" from="1" to="0" begin="earlyAnim8.end+1s"
+            dur="0.5s" fill="freeze" />
+        <animate id="earlyAnim10" attributeName="y" from="463" to="138" begin="earlyAnim9.end"
+            dur="0.01s" fill="freeze" />
+    </rect>
+
+    <!-- Annotations -->
+    <text x="245" y="590" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+        fill="#1890ff">Deep nesting increases complexity</text>
+    <text x="655" y="590" font-family="Arial, sans-serif" font-size="14" text-anchor="middle"
+        fill="#52c41a">Flat structure improves readability</text>
+</svg>
